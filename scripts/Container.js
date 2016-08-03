@@ -6,7 +6,7 @@ export default class Container extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.sortableGroupDecorator = (component) => {
+    this.sortableGroupDecoratorBlocks = (component) => {
       if (component !== null) {
         let options = {
           draggable: '.listItem',
@@ -19,7 +19,7 @@ export default class Container extends Component {
       }
     };
 
-    this.sortableGroupDecorator1 = (component) => {
+    this.sortableGroupDecoratorMain = (component) => {
       if (component !== null) {
         let options = {
           draggable: '.listItem',
@@ -30,14 +30,14 @@ export default class Container extends Component {
           onStart: this.onClick.bind(this),
           onEnd: this.saveTargetSortOrder.bind(this)
         };
-        this.sortList1 = Sortable.create(component, options);
+        this.sortListMain = Sortable.create(component, options);
       }
     };
 
   }
 
   saveTargetSortOrder(){
-    let elements = this.sortList1.toArray();
+    let elements = this.sortListMain.toArray();
     console.log('blocks reordered: ', elements);
   }
 
@@ -55,7 +55,7 @@ export default class Container extends Component {
 
         <div className='blocks'>
           <h1>BLOCKS</h1>
-          <div className="itemList" ref={this.sortableGroupDecorator}>
+          <div className="itemList" ref={this.sortableGroupDecoratorBlocks}>
             <div className="listItem text" data-sortid="1">
               <h4>Lorem ipsum</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet pharetra urna, scelerisque aliquet ante congue non. Maecenas tempus volutpat dictum. Aliquam eu aliquet eros. In euismod sem lorem, egestas suscipit massa efficitur id. Cras ultrices metus eu urna posuere fermentum. Proin a dui at mi euismod ultricies molestie eu orci. Quisque vitae dolor vitae quam suscipit cursus in sed massa. Nullam elit ante, pellentesque id nisi et, aliquet tempus nisi. Aliquam in ligula quis nulla venenatis convallis. Pellentesque eu laoreet lorem. Nullam accumsan purus feugiat, aliquet justo ut, tempor felis. In at tempor turpis.</p>
             </div>
@@ -71,7 +71,7 @@ export default class Container extends Component {
 
         <div className='mainPage'>
           <h1>MAIN PAGE</h1>
-          <div className="target" ref={this.sortableGroupDecorator1}><h2>Drag some blocks here</h2></div>
+          <div className="target" ref={this.sortableGroupDecoratorMain}><h2>Drag some blocks here</h2></div>
         </div>
 
       </div>
