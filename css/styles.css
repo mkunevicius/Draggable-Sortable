@@ -1,0 +1,124 @@
+html {
+  background-color: #eee;
+  font-family: 'Poiret One', 'Arial';
+}
+
+.wrapper {
+  margin: 5%;
+}
+
+.mainPage {
+  width: 65%;
+  float: left;
+}
+
+.blocks {
+  width: 30%;
+  float: right;
+}
+
+.itemList {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 80px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.listItem {
+  margin: 3%;
+  width: 43%;
+  height: 110px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.listItem:hover {
+  cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.listItem:active {
+  opacity: 0.5;
+  cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.target {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  min-height: 400px;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.target h2 {
+  position: absolute;
+  font-size: 2vw;
+  left: 10%;
+  color: #ccc;
+}
+
+.target .listItem {
+  min-height: 200px;
+  overflow: scroll;
+  min-width: 95%;
+  margin-top: 3px;
+  z-index: 100;
+}
+
+.itemList .listItem:hover {
+  background-color: #fafafa;
+}
+
+h1 {
+  text-align: center;
+  color: #666;
+}
+
+.listItem h4, .listItem p {
+  padding: 5px;
+}
+
+.target .listItem img {
+  width: 100%;
+}
+
+.itemList .listItem img {
+  height: 100%;;
+}
+
+.itemList .listItem h4 {
+  margin: 0;
+}
+
+.itemList .listItem img:hover {
+  opacity: 0.8;
+}
+
+.text {
+  background-color: #eee;
+}
+
+.listItem h1 {
+  font-size: 1.6vw;
+}
+
+@media (max-width: 760px) {
+  .listItem {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .target .listItem img {
+    height: 100%;
+    width: auto;
+  }
+
+}
