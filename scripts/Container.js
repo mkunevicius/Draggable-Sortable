@@ -26,7 +26,6 @@ export default class Container extends Component {
           group: 'planItems',
           animation: 200,
           dataIdAttr: 'data-sortid',
-          pull: 'clone',
           onStart: this.onClick.bind(this),
           onEnd: this.saveTargetSortOrder.bind(this)
         };
